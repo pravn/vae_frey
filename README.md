@@ -9,3 +9,5 @@ process data, plotting and writing the generator
 Heavily inspired by this version for Keras by Elvis Dohmatob:
 http://dohmatob.github.io/research/2016/10/22/VAE.html
 
+Some notes are in my wordpress blog. 
+https://pravn.wordpress.com/2017/06/04/the-objective-function-in-the-variational-autoencoder/
