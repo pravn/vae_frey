@@ -87,10 +87,10 @@ for i, sample in enumerate(samples):
     ax.set_xticklabels([])
     ax.set_yticklabels([])
     ax.set_aspect('equal')
-    plt.imshow(sample.reshape(28,20))
+    plt.imshow(sample.reshape(28,20), cmap='gray')
 
 if not os.path.exists('out/'):
     os.makedirs('out/')
 
-plt.savefig('out/generated_manifold.png',bbox_inches='tight')
+plt.savefig('out/generated_manifold.png',bbox_inches='tight', cmap='gray')
 plt.close(fig)

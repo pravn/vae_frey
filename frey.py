@@ -135,7 +135,7 @@ def train(epoch):
         
 
         if batch_idx == len(train_loader.dataset)/batch_size-1 :
-            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tMinibatch Loss: {:.6f}'.format(
+            print('Train Epoch: {} [{}/{} ({:.0f}%)]\t"Minibatch" Loss: {:.6f}'.format(
                 epoch, (batch_idx+1) * len(data), len(train_loader.dataset),
                 100. * (batch_idx+1) / len(train_loader),
                 loss.data[0] / len(data)))
@@ -155,7 +155,7 @@ def train(epoch):
                 ax.set_xticklabels([])
                 ax.set_yticklabels([])
                 ax.set_aspect('equal')
-                plt.imshow(sample.reshape(28,20))
+                plt.imshow(sample.reshape(28,20), cmap='gray')
 
             if not os.path.exists('out/'):
                 os.makedirs('out/')
@@ -175,7 +175,7 @@ def train(epoch):
                 ax.set_xticklabels([])
                 ax.set_yticklabels([])
                 ax.set_aspect('equal')
-                plt.imshow(sample.reshape(28,20))
+                plt.imshow(sample.reshape(28,20), cmap='gray')
 
             if not os.path.exists('out/'):
                 os.makedirs('out/')
