@@ -56,22 +56,26 @@ class VAE(nn.Module):
         return self.sigmoid(self.fc4(h3))
 
     def forward(self, x):
-        mu, logvar = self.encode(x.view(-1, 560))
+        #mu, logvar = self.encode(x.view(-1, 560))
 
-        self.mu_model = mu
-        self.logvar_model = logvar
+        #self.mu_model = mu
+        #self.logvar_model = logvar
 
-        z = self.reparametrize(mu, logvar)
-        return self.decode(z), mu, logvar
+        #z = self.reparametrize(mu, logvar)
+        
+        return self.decode(z)
 
 
 model = torch.load('./out/save.model')
 print(model)
 
-mu = model.mu_model
-logvar = model.logvar_model
-z = model.reparametrize(mu, logvar)
+#get 100 random z's between 0 and -1
+z = Variable(torch.randn(100,20))
+
+print(z[0])
+z = z.cuda()
 x_gen = model.decode(z)
+
 
 
 print('Generating new frey face manifold')

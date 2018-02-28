@@ -30,7 +30,8 @@ Heavily inspired by this version for Keras by Elvis Dohmatob:
 http://dohmatob.github.io/research/2016/10/22/VAE.html'''
 
 #Download frey faces and put them in a container dir ./frey
-# wget -c http://www.cs.nyu.edu/~roweis/data.html
+#wget -c https://cs.nyu.edu/~roweis/data/frey_rawface.mat
+
 img_rows=28
 img_cols=20
 ff = scipy.io.loadmat('./frey/frey_rawface.mat')
@@ -202,7 +203,7 @@ def test(epoch):
     print('====> Test set loss: {:.4f}'.format(test_loss))
 
 
-num_epochs = 100
+num_epochs = 10
 for epoch in range(1, num_epochs + 1):
     train(epoch)
 
